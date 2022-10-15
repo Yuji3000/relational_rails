@@ -8,10 +8,16 @@ RSpec.describe 'the factories show page' do
         helpful = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3)
 
         visit "/factories/#{socks.id}"
-
+        
         expect(page).to have_content(socks.name)
         expect(page).to have_content(socks.operational)
         expect(page).to have_content(socks.rank)
+
+        visit "factories/#{helpful.id}"
+
+        expect(page).to have_content(helpful.name)
+        expect(page).to have_content(helpful.operational)
+        expect(page).to have_content(helpful.rank)
       end
     end
   end
