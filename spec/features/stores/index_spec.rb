@@ -6,9 +6,19 @@ RSpec.describe 'stores index' do
       it 'shows all stores with attributes' do
         # helpful = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3)
         # socks = Factory.create!(name: "Socks 4 u", operational: true, rank: 14)
-        helpful_store = Store.create!(name: "The Helpful Store", open: true, sold_per_month: 1234)
-        sock_store = Store.create!(name: "Sock House", open: true, sold_per_month: 333)
-      
+        helpful = Factory.create!(name: "The Helpful Factory",
+          operational: true,
+          rank: 3)
+        helpful_store = helpful.stores.create!(name: "The Helpful Store",
+          open: true,
+          sold_per_month: 1234,
+          factory_id: helpful.id)
+        hehe_store = helpful.stores.create!(name: "Laugh House",
+          open: true,
+          sold_per_month: 313,
+          factory_id: helpful.id)
+        
+        
         visit "/stores"
 
         expect(page).to have_content(helpful_store.name)

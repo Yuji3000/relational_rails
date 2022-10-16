@@ -1,6 +1,7 @@
 class FactoriesController < ApplicationController
   def index
-    @factories = Factory.all.order_created_at
+    @factories = Factory.all
+    #.order_created_at
   end
 
   def show

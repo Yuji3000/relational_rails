@@ -4,16 +4,16 @@ RSpec.describe 'Factories Stores index' do
   describe 'As a visitor' do
     describe "When I visit '/factories/:factory_id/stores'" do
       it 'shows each store associated with that factory with attributes' do
-        socks = Factory.create!(name: "Socks 4 u", operational: true, rank: 14)
-        helpful = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3)
+        socks = Factory.create!(name: "Socks 4 u", operational: true, rank: 14) #factory_1
+        helpful = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3) #factory_2
         helpful_store = helpful.stores.create!(name: "The Helpful Store", open: true, sold_per_month: 1234, factory_id: helpful.id)
         hehe_store = helpful.stores.create!(name: "Laugh House", open: true, sold_per_month: 313, factory_id: helpful.id)
-        sock_store = socks.create!(name: "Sock House", open: true, sold_per_month: 333, factory_id: socks.id)
+        sock_store = socks.stores.create!(name: "Sock House", open: true, sold_per_month: 333, factory_id: socks.id)
        
       
         visit "/factories/#{helpful.id}/stores"
         
-        save_and_open_page
+        
         expect(page).to have_content(helpful_store.name)
         expect(page).to have_content(helpful_store.open)
         expect(page).to have_content(helpful_store.sold_per_month)

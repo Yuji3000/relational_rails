@@ -1,4 +1,5 @@
 <h1>Factories</h1>
 <% @factories.each do |factory| %>
   <p><%= factory.name %></p>
+  <p> Store count:(<%= factory.stores.count %>)</p>
 <% end %>

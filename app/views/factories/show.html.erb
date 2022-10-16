@@ -1,4 +1,7 @@
+
 <h1><%= @factory.name %></h1>
 
 <p>operational: <%= @factory.operational %></p>
 <p>Rank: <%= @factory.rank %></p>
+
+<%= link_to "Stores that belong to this factory", "/factories/#{@factory.id}/stores"  %>
