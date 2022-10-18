@@ -4,5 +4,9 @@ class Factory < ApplicationRecord
   def self.order_created_at
     self.order(created_at: :desc)
   end
+  
+  def store_count
+    stores.count
+  end
 
 end

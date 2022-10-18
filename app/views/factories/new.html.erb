@@ -1,0 +1,9 @@
+<%= form_with url: '/factories', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :operational %>
+  <%= form.text_field :operational %>
+  <%= form.label :rank %>
+  <%= form.text_field :rank%>
+  <%= form.submit "Create Factory" %>
+<% end %>

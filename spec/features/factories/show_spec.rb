@@ -36,10 +36,28 @@ RSpec.describe 'the factories show page' do
           factory_id: factory_1.id)
         
         visit "/factories/#{factory_1.id}"
-
-        click_link ('Stores that belong to this factory')
+# save_and_open_page
+        click_link ('Stores that belong to This factory')
         expect(current_path).to eq("/factories/#{factory_1.id}/stores")
       end
+      it 'when click link update factory goes to edit page' do
+        factory_1 = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3)
+
+        store_1 = Store.create!(name: "The Helpful Store", open: true,
+          sold_per_month: 1234,
+          factory_id: factory_1.id)
+        store_2 = Store.create!(name: "Laugh House",
+          open: true,
+          sold_per_month: 313,
+          factory_id: factory_1.id)
+        
+        visit "/factories/#{factory_1.id}"
+        
+        click_link ('Update Factory')
+        expect(current_path).to eq("/factories/#{factory_1.id}/edit")
+      end
+
+   
     end
   end
 end
