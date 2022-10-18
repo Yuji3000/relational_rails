@@ -1,0 +1,11 @@
+<h1>Store</h1>
+
+  <h3><%= @store.name %></h3>
+  <p>Open: <%= @store.open %></p>
+  <p>Sold per month: <%= @store.sold_per_month %></p>
+  <p>Created at: <%= @store.created_at %></p>
+  <p>Updated at: <%= @store.updated_at %></p>
+  <p>Sold per month: <%= @store.sold_per_month %></p>
+  <p>ID: <%= @store.id %></p>
+
+<%= link_to "Update Store", "/stores/#{@store.id}/edit" %>

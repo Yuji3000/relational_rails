@@ -1,0 +1,7 @@
+
+<h1><%= @factory.name %></h1>
+
+<p>operational: <%= @factory.operational %></p>
+<p>Rank: <%= @factory.rank %></p>
+<%= link_to "Update Factory", "/factories/#{@factory.id}/edit" %><br>
+<%= link_to "Stores that belong to This factory", "/factories/#{@factory.id}/stores" %>

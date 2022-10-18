@@ -1,0 +1,6 @@
+<h1>Stores</h1>
+<% @stores.each do |store| %>
+  <h3><%= store.name %></h3>
+  <p>Open: <%= store.open %></p>
+  <p>Sold per month: <%= store.sold_per_month %></p>
+<% end %>
