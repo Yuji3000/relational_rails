@@ -16,7 +16,7 @@ RSpec.describe 'the store creation' do
     expect(current_path).to eq("/factories/#{@factory_1.id}/stores")
     
     visit "/factories/#{@factory_1.id}/stores"
-    # save_and_open_page
+    
     expect(page).to have_content("Name: Prince Store")
     expect(page).to have_content("Open: true")
     expect(page).to have_content("Sold per month: 14")

@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   patch '/factories/:id', to: 'factories#update'
   get '/factories/:id/stores/new', to: 'factory_stores#new'
   post '/factories/:id/stores/new', to: 'factory_stores#create'
+  get '/stores/:id/edit', to: 'stores#edit'
+  patch '/stores/:id', to: 'stores#update'
 end

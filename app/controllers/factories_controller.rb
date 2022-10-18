@@ -19,11 +19,7 @@ class FactoriesController < ApplicationController
   end
 
   def create
-    factory = Factory.create({
-      name: params[:name],
-      operational: params[:operational],
-      rank: params[:rank]
-      })
+    factory = Factory.create(factory_params)
     redirect_to "/factories"
   end
 

@@ -20,14 +20,6 @@ RSpec.describe 'Factories Stores index' do
         expect(page).to have_content(@store_1.created_at)
         expect(page).to have_content(@store_1.updated_at)
         expect(page).to have_content(@store_1.id)
-
-        # visit "/factories/#{socks.id}/stores"
-
-        # expect(page).to have_content(hehe.name)
-        # expect(page).to have_content(hehe.operational)
-        # expect(page).to have_content(hehe.sold_per_month)
-        # expect(page).to have_content(hehe.created_at)
-        # expect(page).to have_content(hehe.updated_at)
       end
 
       it 'has a link that goes to create new store form' do

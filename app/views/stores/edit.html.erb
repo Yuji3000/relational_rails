@@ -1,0 +1,9 @@
+<%= form_with url: "/stores/#{@store.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :open %>
+  <%= form.text_field :open %>
+  <%= form.label :sold_per_month %>
+  <%= form.text_field :sold_per_month %>
+  <%= form.submit 'Edit Store' %>
+<% end %>
