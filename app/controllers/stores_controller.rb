@@ -9,7 +9,6 @@ class StoresController < ApplicationController
 
   def edit
     @store = Store.find(params[:id])
-
   end
 
   def update
@@ -22,5 +21,4 @@ class StoresController < ApplicationController
   def store_params
     params.permit(:name, :open, :sold_per_month)
   end
-
 end
