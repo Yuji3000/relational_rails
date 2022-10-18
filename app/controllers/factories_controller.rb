@@ -1,7 +1,6 @@
 class FactoriesController < ApplicationController
   def index
     @factories = Factory.all
-    #.order_created_at
   end
 
   def show
@@ -9,13 +8,10 @@ class FactoriesController < ApplicationController
   end
 
   def new
-
   end
 
   def edit
     @factory = Factory.find(params[:id])
-
-   
   end
 
   def create
