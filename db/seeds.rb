@@ -16,7 +16,8 @@
 factory_1 = Factory.create!(name: "Socks 4 u", operational: true, rank: 14)
 factory_2 = Factory.create!(name: "The Helpful Factory", operational: true, rank: 3)
 
-store_1 = Store.create!(name: "The Helpful Store", open: true,
+store_1 = Store.create!(name: "The Helpful Store", 
+  open: true,
   sold_per_month: 1234,
   factory_id: factory_1.id)
 store_2 = Store.create!(name: "Laugh House",

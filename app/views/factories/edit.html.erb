@@ -1,10 +1,10 @@
 <%= form_with url: "/factories/#{@factory.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, :value => @factory.name %>
   <%= form.label :operational %>
-  <%= form.text_field :operational %>
+  <%= form.text_field :operational, :value => @factory.operational  %>
   <%= form.label :rank %>
-  <%= form.text_field :rank %>
+  <%= form.text_field :rank, :value => @factory.rank %>
   <%= form.submit 'edit Factory' %>
 <% end %>
 

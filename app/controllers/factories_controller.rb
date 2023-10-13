@@ -11,7 +11,9 @@ class FactoriesController < ApplicationController
   end
 
   def edit
+    # require 'pry'; binding.pry
     @factory = Factory.find(params[:id])
+    # @name = @factory.name
   end
 
   def create

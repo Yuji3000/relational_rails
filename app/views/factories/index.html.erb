@@ -1,6 +1,8 @@
 <h1>Factories</h1>
 <%= link_to "New Factory", "/factories/new" %>
 <% @factories.each do |factory| %>
-  <p><%= factory.name %></p>
-  <p> Store count:(<%= factory.store_count %>)</p>
+  <p>Name: <%= factory.name %></p>
+  <p>Created at: <%= factory.created_at %></p>
+  <p> Store count: (<%= factory.store_count %>)</p>
+  <br>
 <% end %>
